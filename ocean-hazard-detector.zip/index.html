@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOIS Ocean Hazard Detection & Social Media Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">🌊</div>
+                <div class="title">
+                    <h1>INCOIS Ocean Hazard Detection</h1>
+                    <p>Social Media Analytics Platform</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="system-status">
+                    <div class="status-indicator" id="systemStatus">
+                        <div class="status-dot"></div>
+                        <span>System Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('dashboard')" class="nav-link active">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a></li>
+                <li><a href="#" onclick="showPage('monitoring')" class="nav-link">
+                    <span class="nav-icon">📡</span>
+                    Real-time Monitoring
+                </a></li>
+                <li><a href="#" onclick="showPage('social-media')" class="nav-link">
+                    <span class="nav-icon">📱</span>
+                    Social Media Analysis
+                </a></li>
+                <li><a href="#" onclick="showPage('hotspots')" class="nav-link">
+                    <span class="nav-icon">🗺️</span>
+                    Hotspot Visualization
+                </a></li>
+                <li><a href="#" onclick="showPage('alerts')" class="nav-link">
+                    <span class="nav-icon">🚨</span>
+                    Alert System
+                </a></li>
+                <li><a href="#" onclick="showPage('analytics')" class="nav-link">
+                    <span class="nav-icon">📈</span>
+                    Analytics & Reports
+                </a></li>
+                <li><a href="#" onclick="showPage('about')" class="nav-link">
+                    <span class="nav-icon">ℹ️</span>
+                    About
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Page -->
+            <div id="dashboard" class="page active">
+                <div class="page-header">
+                    <h2>Dashboard Overview</h2>
+                    <p>Real-time ocean hazard monitoring and analytics</p>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-info">
+                            <h3 id="totalReports">156</h3>
+                            <p>Total Reports</p>
+                        </div>
+                    </div>
+                    <div class="metric-card danger">
+                        <div class="metric-icon">⚠️</div>
+                        <div class="metric-info">
+                            <h3 id="activeHazards">23</h3>
+                            <p>Active Hazards</p>
+                        </div>
+                    </div>
+                    <div class="metric-card warning">
+                        <div class="metric-icon">📍</div>
+                        <div class="metric-info">
+                            <h3 id="activeHotspots">8</h3>
+                            <p>Active Hotspots</p>
+                        </div>
+                    </div>
+                    <div class="metric-card success">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-info">
+                            <h3 id="systemConfidence">89%</h3>
+                            <p>System Confidence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Recent High-Priority Alerts</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="recentAlerts" class="alerts-list"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Hazard Types Distribution</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="hazardChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-time Monitoring Page -->
+            <div id="monitoring" class="page">
+                <div class="page-header">
+                    <h2>Real-time Monitoring</h2>
+                    <p>Analyze social media posts for ocean hazard detection</p>
+                </div>
+                
+                <div class="monitoring-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Text Analysis Input</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="form-group">
+                                <label class="form-label">Enter social media post or text for analysis:</label>
+                                <textarea id="analysisInput" class="form-control" rows="4" placeholder="Example: Massive waves hitting Chennai coast. Water levels rising rapidly!"></textarea>
+                            </div>
+                            <button onclick="performAnalysis()" class="btn btn--primary">Analyze Text</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>AI Analysis Results</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="analysisResults" class="analysis-results">
+                                <p class="text-muted">Enter text above and click "Analyze Text" to see AI analysis results</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Recent Analysis History</h3>
+                    </div>
+                    <div class="card__body">
+                        <div id="analysisHistory" class="history-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Analysis Page -->
+            <div id="social-media" class="page">
+                <div class="page-header">
+                    <h2>Social Media Analysis</h2>
+                    <p>Batch analysis of multiple social media posts</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Batch Text Analysis</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label class="form-label">Enter multiple posts (one per line):</label>
+                            <textarea id="batchInput" class="form-control" rows="6" placeholder="TSUNAMI ALERT! Massive waves hitting Chennai coast
+Beautiful day at Marina Beach Mumbai
+Storm surge warning issued for Kochi harbor"></textarea>
+                        </div>
+                        <button onclick="performBatchAnalysis()" class="btn btn--primary">Analyze All Posts</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Batch Analysis Results</h3>
+                        <div class="card-actions">
+                            <button onclick="exportResults()" class="btn btn--secondary btn--sm">Export Results</button>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div id="batchResults" class="batch-results">
+                            <p class="text-muted">No analysis results yet. Enter posts above and click "Analyze All Posts"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotspot Visualization Page -->
+            <div id="hotspots" class="page">
+                <div class="page-header">
+                    <h2>Hotspot Visualization</h2>
+                    <p>Geographic distribution of ocean hazards</p>
+                </div>
+                
+                <div class="hotspots-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Hotspot Map</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="hotspotMap" class="hotspot-map"></div>
+                            <div class="map-legend">
+                                <h4>Risk Level Legend</h4>
+                                <div class="legend-item">
+                                    <div class="legend-color high-risk"></div>
+                                    <span>High Risk</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color medium-risk"></div>
+                                    <span>Medium Risk</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color low-risk"></div>
+                                    <span>Low Risk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Hotspot Details</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="hotspotDetails" class="hotspot-details">
+                                <p class="text-muted">Select a hotspot on the map to view details</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert System Page -->
+            <div id="alerts" class="page">
+                <div class="page-header">
+                    <h2>Alert System</h2>
+                    <p>Active hazard alerts and notifications</p>
+                </div>
+                
+                <div class="alert-filters card">
+                    <div class="card__header">
+                        <h3>Filter Alerts</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="filters-grid">
+                            <div class="form-group">
+                                <label class="form-label">Urgency Level</label>
+                                <select id="urgencyFilter" class="form-control" onchange="applyAlertFilters()">
+                                    <option value="">All Levels</option>
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Hazard Type</label>
+                                <select id="hazardFilter" class="form-control" onchange="applyAlertFilters()">
+                                    <option value="">All Types</option>
+                                    <option value="tsunami">Tsunami</option>
+                                    <option value="storm_surge">Storm Surge</option>
+                                    <option value="high_waves">High Waves</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Active Alerts</h3>
+                    </div>
+                    <div class="card__body">
+                        <div id="alertsList" class="alerts-grid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Page -->
+            <div id="analytics" class="page">
+                <div class="page-header">
+                    <h2>Analytics & Reports</h2>
+                    <p>Comprehensive hazard analytics and system performance</p>
+                </div>
+                
+                <div class="analytics-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Hazard Trends Over Time</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="trendsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Location-wise Frequency</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="locationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="performance-metrics card">
+                    <div class="card__header">
+                        <h3>System Performance Metrics</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="metrics-grid">
+                            <div class="performance-metric">
+                                <h4>Processing Speed</h4>
+                                <p>0.23 seconds avg</p>
+                            </div>
+                            <div class="performance-metric">
+                                <h4>Accuracy</h4>
+                                <p>94.7%</p>
+                            </div>
+                            <div class="performance-metric">
+                                <h4>Coverage</h4>
+                                <p>10,847 km coastline</p>
+                            </div>
+                            <div class="performance-metric">
+                                <h4>Uptime</h4>
+                                <p>99.9%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div id="about" class="page">
+                <div class="page-header">
+                    <h2>About INCOIS Platform</h2>
+                    <p>Ocean hazard detection and social media analytics system</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>About INCOIS</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>The Indian National Centre for Ocean Information Services (INCOIS), operating under the administrative control of the Ministry of Earth Sciences, provides ocean information and advisory services to support disaster risk reduction and ensure maritime safety for coastal stakeholders.</p>
+                            
+                            <p>Its early warning services cover hazards such as tsunamis, storm surges, high waves, swell surges, and coastal currents, enabling authorities and communities to make informed decisions during ocean-related emergencies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>System Capabilities</h3>
+                        </div>
+                        <div class="card__body">
+                            <ul>
+                                <li>Real-time social media monitoring and analysis</li>
+                                <li>AI-powered hazard detection from text data</li>
+                                <li>Geographic hotspot identification</li>
+                                <li>Multi-language support for regional accessibility</li>
+                                <li>Integration with existing early warning systems</li>
+                                <li>Crowdsourced reporting platform</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Technical Specifications</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="tech-specs">
+                                <div class="spec-item">
+                                    <strong>AI/ML Models:</strong>
+                                    <span>Natural Language Processing, Text Classification</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Data Sources:</strong>
+                                    <span>Social Media, Crowdsourced Reports, Sensors</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Processing Speed:</strong>
+                                    <span>Real-time analysis (< 1 second)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Coverage:</strong>
+                                    <span>Indian Coastline (7,517 km)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="loading-spinner"></div>
+            <p>Analyzing text with AI models...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

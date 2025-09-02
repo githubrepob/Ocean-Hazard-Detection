@@ -1,0 +1,51 @@
+text,hazard_type,is_hazard,urgency,processed_text
+Massive waves hitting the coast! Water rising rapidly #tsunami #emergency,tsunami,1,high,massive waves hitting the coast water rising rapidly tsunami emergency
+Unusual sea behavior observed. Water receding dramatically from beach,tsunami,1,high,unusual sea behavior observed water receding dramatically from beach
+ALERT: Large waves approaching coastal areas. Evacuate immediately!,tsunami,1,high,alert large waves approaching coastal areas evacuate immediately
+Seismic activity detected offshore. Tsunami warning in effect,tsunami,1,high,seismic activity detected offshore tsunami warning in effect
+Water levels rising unusually fast at the harbor,tsunami,1,high,water levels rising unusually fast at the harbor
+Unprecedented tidal wave seen from lighthouse. Seeking higher ground,tsunami,1,high,unprecedented tidal wave seen from lighthouse seeking higher ground
+Ocean behaving strangely. Waves much larger than normal,tsunami,1,high,ocean behaving strangely waves much larger than normal
+Coastal flooding in progress. Multiple areas affected,tsunami,1,high,coastal flooding in progress multiple areas affected
+Sea wall breached by massive waves. Emergency response needed,tsunami,1,high,sea wall breached by massive waves emergency response needed
+Tsunami sirens activated. Moving to evacuation centers,tsunami,1,high,tsunami sirens activated moving to evacuation centers
+Hurricane approaching! Storm surge warning issued for coastal areas,storm_surge,1,high,hurricane approaching storm surge warning issued for coastal areas
+High winds and rising water levels. Coastal flooding expected,storm_surge,1,high,high winds and rising water levels coastal flooding expected
+Storm surge barriers activated. Water levels critical,storm_surge,1,high,storm surge barriers activated water levels critical
+Cyclone impact: Severe coastal flooding in multiple districts,storm_surge,1,high,cyclone impact severe coastal flooding in multiple districts
+Emergency: Storm surge causing widespread flooding,storm_surge,1,high,emergency storm surge causing widespread flooding
+Harbor facilities underwater due to storm surge,storm_surge,1,high,harbor facilities underwater due to storm surge
+Extreme weather causing dangerous sea conditions,storm_surge,1,high,extreme weather causing dangerous sea conditions
+Coastal evacuation ordered due to incoming storm surge,storm_surge,1,high,coastal evacuation ordered due to incoming storm surge
+Pier completely submerged by storm waters,storm_surge,1,high,pier completely submerged by storm waters
+Fishing boats damaged by storm surge and high waves,storm_surge,1,high,fishing boats damaged by storm surge and high waves
+Dangerous wave conditions observed. Small craft advisory in effect,high_waves,1,medium,dangerous wave conditions observed small craft advisory in effect
+10-foot waves reported near coast. Swimming prohibited,high_waves,1,medium,foot waves reported near coast swimming prohibited
+Rough sea conditions making navigation hazardous,high_waves,1,medium,rough sea conditions making navigation hazardous
+Large waves damaging coastal properties,high_waves,1,medium,large waves damaging coastal properties
+Surfing cancelled due to dangerous wave heights,high_waves,1,medium,surfing cancelled due to dangerous wave heights
+Fishing vessels returning early due to high waves,high_waves,1,medium,fishing vessels returning early due to high waves
+Wave height exceeding safe limits for marine activities,high_waves,1,medium,wave height exceeding safe limits for marine activities
+Choppy waters making ferry operations dangerous,high_waves,1,medium,choppy waters making ferry operations dangerous
+Massive swells creating hazardous conditions,high_waves,1,medium,massive swells creating hazardous conditions
+Wave energy causing coastal infrastructure damage,high_waves,1,medium,wave energy causing coastal infrastructure damage
+Long-period swells reaching coast. Unusual wave patterns,swell_surge,1,medium,longperiod swells reaching coast unusual wave patterns
+Ocean swell causing minor flooding in low-lying areas,swell_surge,1,medium,ocean swell causing minor flooding in lowlying areas
+Swell surge affecting boat moorings at marina,swell_surge,1,medium,swell surge affecting boat moorings at marina
+Unexpectedly large swells from distant storm system,swell_surge,1,medium,unexpectedly large swells from distant storm system
+Swell conditions making port entry challenging,swell_surge,1,medium,swell conditions making port entry challenging
+Ground swell causing periodic coastal flooding,swell_surge,1,medium,ground swell causing periodic coastal flooding
+Marine advisory: Significant swell activity predicted,swell_surge,1,medium,marine advisory significant swell activity predicted
+Swell-induced waves affecting coastal infrastructure,swell_surge,1,medium,swellinduced waves affecting coastal infrastructure
+Long-range swell impacting navigation channels,swell_surge,1,medium,longrange swell impacting navigation channels
+Periodic swell surges observed at tide monitoring stations,swell_surge,1,medium,periodic swell surges observed at tide monitoring stations
+Beautiful sunset at the beach today. Perfect weather!,normal,0,low,beautiful sunset at the beach today perfect weather
+Enjoying a peaceful walk along the shore,normal,0,low,enjoying a peaceful walk along the shore
+Great day for fishing. Calm waters and good catch,normal,0,low,great day for fishing calm waters and good catch
+Beach volleyball tournament going well. Nice conditions,normal,0,low,beach volleyball tournament going well nice conditions
+Ferry service running on schedule today,normal,0,low,ferry service running on schedule today
+Port operations normal. Ships arriving and departing safely,normal,0,low,port operations normal ships arriving and departing safely
+Lighthouse tour was amazing. Clear visibility,normal,0,low,lighthouse tour was amazing clear visibility
+Coastal cleanup drive successful. Community participation excellent,normal,0,low,coastal cleanup drive successful community participation excellent
+Marine research expedition launched successfully,normal,0,low,marine research expedition launched successfully
+Harbor festival celebrating maritime heritage,normal,0,low,harbor festival celebrating maritime heritage
